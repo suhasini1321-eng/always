@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Love Effect</title>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Purple LOVE text with glowing lines */
+    .love {
+      font-size: 100px;
+      font-weight: bold;
+      color: purple;
+      position: relative;
+      text-shadow: 0 0 20px purple, 0 0 40px violet;
+    }
+
+    .love::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, purple 10%, transparent 70%);
+      transform: translate(-50%, -50%);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+      100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+    }
+
+    /* Animated text sliding from left to right */
+    .message {
+      margin-top: 50px;
+      font-size: 28px;
+      font-weight: bold;
+      color: violet;
+      opacity: 0;
+      animation: slide 5s forwards;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="love">LOVE</div>
+  <div class="message">Ami Tomay Valobasi Alfa ❤️</div>
+<div class="message"> অনেক ভালোবাসি তোমাকে...</div>
+</body>
+</html>
